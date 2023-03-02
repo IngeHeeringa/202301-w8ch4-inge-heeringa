@@ -15,18 +15,24 @@ const calculatorSlice = createSlice({
     appendNumber: (
       currentCalculatorState: CalculatorState,
       action: PayloadAction<string>
-    ): CalculatorState => ({
-      ...currentCalculatorState,
-      display: currentCalculatorState.display.concat(action.payload),
-      currentOperand: +("" + currentCalculatorState.currentOperand).concat(
-        action.payload
-      ),
-    }),
+    ): CalculatorState => {
+      if (currentCalculatorState.display.length < 16) {
+        return {
+          ...currentCalculatorState,
+          display: currentCalculatorState.display.concat(action.payload),
+          currentOperand: +("" + currentCalculatorState.currentOperand).concat(
+            action.payload
+          ),
+        };
+      } else {
+        return { ...currentCalculatorState };
+      }
+    },
     sumNumbers: (
       currentCalculatorState: CalculatorState,
       action: PayloadAction<string>
     ): CalculatorState => ({
-      ...currentCalculatorState,
+      operator: "+",
       previousOperand: currentCalculatorState.currentOperand,
       currentOperand: +currentCalculatorState.currentOperand + +action.payload,
       display: "" + (+currentCalculatorState.currentOperand + +action.payload),

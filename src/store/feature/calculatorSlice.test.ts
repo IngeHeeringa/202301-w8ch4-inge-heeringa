@@ -44,7 +44,7 @@ describe("Given a calculatorReducer function", () => {
         display: "10",
         currentOperand: 10,
         previousOperand: 6,
-        operator: null,
+        operator: "+",
       };
 
       const newState = calculatorReducer(
