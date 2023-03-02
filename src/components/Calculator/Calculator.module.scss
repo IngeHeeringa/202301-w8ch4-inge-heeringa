@@ -1,9 +1,12 @@
 .calculator {
   width: 350px;
-  height: 500px;
+  height: 400px;
   background-color: #182329;
   border-radius: 10px;
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .display {
