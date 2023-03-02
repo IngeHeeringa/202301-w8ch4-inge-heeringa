@@ -13,7 +13,7 @@ describe("Given a calculatorReducer function", () => {
         previousOperand: "",
         operator: null,
       };
-      const payload = 8;
+      const payload = "8";
       const expectedState: CalculatorState = {
         display: "538",
         currentOperand: "538",
