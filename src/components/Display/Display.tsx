@@ -1,5 +1,7 @@
+import styles from "./Display.module.scss";
+
 const Display = (): JSX.Element => {
-  return <div className={styles.display}></div>;
+  return <span className={styles.display}></span>;
 };
 
 export default Display;
