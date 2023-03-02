@@ -19,7 +19,6 @@ const Calculator = (): JSX.Element => {
     "/",
     "clear",
     ".",
-    "delete",
     "=",
   ];
 
