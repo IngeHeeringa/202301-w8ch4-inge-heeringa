@@ -14,7 +14,7 @@ const calculatorSlice = createSlice({
   reducers: {
     appendNumber: (
       currentCalculatorState: CalculatorState,
-      action: PayloadAction<number>
+      action: PayloadAction<string>
     ): CalculatorState => ({
       ...currentCalculatorState,
       display: currentCalculatorState.display.concat("" + action.payload),
