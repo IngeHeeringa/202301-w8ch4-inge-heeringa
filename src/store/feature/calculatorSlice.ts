@@ -3,8 +3,8 @@ import { CalculatorState } from "../../types";
 
 const initialCalculatorState: CalculatorState = {
   display: "",
-  currentOperand: 0,
-  previousOperand: 0,
+  currentOperand: "",
+  previousOperand: "",
   operator: null,
 };
 
@@ -18,7 +18,8 @@ const calculatorSlice = createSlice({
     ): CalculatorState => ({
       ...currentCalculatorState,
       display: currentCalculatorState.display.concat("" + action.payload),
-      currentOperand: currentCalculatorState.currentOperand + action.payload,
+      currentOperand:
+        "" + (currentCalculatorState.currentOperand + action.payload),
     }),
   },
 });
