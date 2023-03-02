@@ -1,6 +1,6 @@
 import styles from "./Calculator.module.scss";
 
-const Calculator = () => {
+const Calculator = (): JSX.Element => {
   return (
     <div className={styles.calculator}>
       <div className={styles.display}></div>
