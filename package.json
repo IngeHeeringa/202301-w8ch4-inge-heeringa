@@ -21,8 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --passWithNoTests",
-    "test:dev": "react-scripts test -- --watch --passWithNoTests",
+    "test": "react-scripts test",
+    "test:dev": "react-scripts test -- --watch",
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
