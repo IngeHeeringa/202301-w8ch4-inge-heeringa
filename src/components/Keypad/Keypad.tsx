@@ -1,4 +1,5 @@
 import Key from "../Key/Key";
+import styles from "./Keypad.module.scss";
 
 const Keypad = (): JSX.Element => {
   const keyTexts = [
@@ -16,15 +17,15 @@ const Keypad = (): JSX.Element => {
     "-",
     "*",
     "/",
-    "clear",
     ".",
     "=",
+    "Clear",
   ];
 
   return (
-    <ul>
+    <ul className={styles.keypad}>
       {keyTexts.map((keyText) => (
-        <li>
+        <li key={keyText}>
           <Key keyText={keyText} />
         </li>
       ))}
