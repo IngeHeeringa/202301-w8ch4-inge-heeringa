@@ -1,5 +1,5 @@
 import { appendNumberActionCreator } from "../../store/feature/calculatorSlice";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import styles from "./Key.module.scss";
 
 interface KeyProps {
@@ -8,15 +8,19 @@ interface KeyProps {
 
 const Key = ({ keyText }: KeyProps): JSX.Element => {
   const dispatch = useAppDispatch();
+  const { display } = useAppSelector((state) => state.calculator);
 
-  const appendNumber = (number: string) => {
-    if (["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].includes(number)) {
-      dispatch(appendNumberActionCreator(number));
+  const handleClick = (keyText: string) => {
+    if (
+      ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"].includes(keyText) &&
+      display.length < 16
+    ) {
+      dispatch(appendNumberActionCreator(keyText));
     }
   };
 
   return (
-    <button className={styles.key} onClick={() => appendNumber(keyText)}>
+    <button className={styles.key} onClick={() => handleClick(keyText)}>
       {keyText}
     </button>
   );
