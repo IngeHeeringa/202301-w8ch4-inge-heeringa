@@ -1,6 +1,6 @@
 export interface CalculatorState {
   display: string;
-  currentOperand: string;
-  previousOperand: string;
+  currentOperand: number;
+  previousOperand: number;
   operator: string | null;
 }

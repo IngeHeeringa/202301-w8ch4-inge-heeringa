@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { store } from "../../store";
 import Key from "./Key";
 
 describe("Given a Key component", () => {
@@ -7,7 +9,11 @@ describe("Given a Key component", () => {
       const keyText = "9";
       const expectedNumber = "9";
 
-      render(<Key keyText={keyText} />);
+      render(
+        <Provider store={store}>
+          <Key keyText={keyText} />
+        </Provider>
+      );
       const key = screen.getByRole("button", { name: expectedNumber });
 
       expect(key).toBeInTheDocument();
@@ -19,7 +25,11 @@ describe("Given a Key component", () => {
       const keyText = "Clear";
       const expectedText = "Clear";
 
-      render(<Key keyText={keyText} />);
+      render(
+        <Provider store={store}>
+          <Key keyText={keyText} />
+        </Provider>
+      );
       const key = screen.getByRole("button", { name: expectedText });
 
       expect(key).toBeInTheDocument();
@@ -31,7 +41,11 @@ describe("Given a Key component", () => {
       const keyText = "+";
       const expectedOperator = "+";
 
-      render(<Key keyText={keyText} />);
+      render(
+        <Provider store={store}>
+          <Key keyText={keyText} />
+        </Provider>
+      );
       const key = screen.getByRole("button", { name: expectedOperator });
 
       expect(key).toBeInTheDocument();
